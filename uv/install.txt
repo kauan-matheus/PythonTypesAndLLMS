@@ -1,0 +1,11 @@
+## Pra baixar no windows é:
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+## Pra baixar no linux é 
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+## Pra iniciar no projeto é 
+uv init
+
+# Pra baixar algum package é 
+uv add (Nome do pacote)

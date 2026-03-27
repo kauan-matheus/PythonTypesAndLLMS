@@ -62,6 +62,60 @@ variavel: Any = 42
 variavel = "Agora é uma string"
 variavel = [1, 2, 3]
 
+## Literal (valores literais específicos)
+from typing import Literal
+Status: Literal["sucesso", "erro", "pendente"] = "sucesso" # Só pode ser um desses valores
+status: Status = "pendente" # type: ignore # Válido, mas se eu tentar atribuir um valor diferente, como "falha", vai dar erro
+
+# Type Aliases (alias de tipos)
+from typing import TypeAlias
+# Type Aliases são usados para criar um nome alternativo para um tipo complexo, tornando o código mais legível e fácil de entender.
+Usuario: TypeAlias = dict[str, str | int | bool]
+usuario: Usuario = { # type: ignore
+    "Nome": "kauan",
+    "Email": "kauan8643@gmail.com",
+    "Idade": 21,
+    "Ativo": True
+}
+
+# TypedDict (dicionário com tipos específicos para cada chave)
+from typing import TypedDict
+ # TypedDict é uma classe que permite definir um tipo de dicionário com chaves específicas
+ # e tipos de valores associados a cada chave. Ele é útil para garantir que um dicionário
+ # tenha uma estrutura específica e para fornecer informações de tipo mais precisas.
+class Usuario(TypedDict):
+    nome: str
+    email: str
+    idade: int
+    ativo: bool
+
+usuario: Usuario = { # type: ignore
+    "nome": "kauan",
+    "email": "kauan8643@gmail.com",
+    "idade": 21,
+    "ativo": True
+}
+
+# Classes Tipadas (Typed Classes)
+from dataclasses import dataclass
+# Dataclasses são uma maneira de criar classes simples para armazenar dados,
+# sem a necessidade de escrever métodos como __init__ ou __repr__.
+# Elas são úteis para criar classes que são principalmente usadas para armazenar dados
+# e podem ser facilmente convertidas em dicionários ou outros formatos.
+@dataclass
+class Usuario:
+    nome: str
+    email: str
+    idade: int
+    ativo: bool
+
+usuario = Usuario(
+    nome="kauan",
+    email="kauan8643@gmail.com",
+    idade=21,
+    ativo=True
+)
+
 ## ---EXEMPLO DE USO DE TIPOS--- ##
 def listar_tarefas() -> list[dict[str, str | int | bool]]:
     return [
