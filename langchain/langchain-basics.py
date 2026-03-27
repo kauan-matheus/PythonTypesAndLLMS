@@ -1,3 +1,8 @@
+import os
+# pra usar o OpenAI API, você precisa configurar a variável de ambiente OPENAI_API_KEY 
+# com a sua chave de API da OpenAI.
+os.environ["OPENAI_API_KEY"] = "sua-chave-aqui"
+
 # -- LangChain é um framework para construir aplicações com LLMs (como GPT) -- #
 
 # Ele serve para:
@@ -36,7 +41,7 @@ llm = ChatOpenAI(model="gpt-4")
 # Aqui eu to criando um prompt, que é basicamente uma instrução ou pergunta que eu quero fazer para o modelo de linguagem.
 # O ChatPromptTemplate é uma classe do LangChain que me permite criar prompts de forma estruturada,
 # usando placeholders para inserir variáveis dinamicamente. 
-from langchain.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
 prompt = ChatPromptTemplate.from_template("Resuma esse texto: {texto}")
 
 # -- CHAIN -- #

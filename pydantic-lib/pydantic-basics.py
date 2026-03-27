@@ -22,13 +22,13 @@ print(usuario)
 ## ---EXEMPLO REAL DE USO EM API--- ##
 
 ## Temos esse json aqui, e para usarmos ele na aplicação, usamos o pydantic
-{
-  "id": "uuid",
-  "title": "Mapear processo",
-  "status": "pendente",
-  "priority": 1,
-  "assigned_to": null
-}
+# {
+#   "id": "uuid",
+#   "title": "Mapear processo",
+#   "status": "pendente",
+#   "priority": 1,
+#   "assigned_to": null
+# }
 
 ## Modelo de dados para a tarefa
 from pydantic import BaseModel
