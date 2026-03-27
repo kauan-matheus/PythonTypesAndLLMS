@@ -1,3 +1,13 @@
+## O QUE É
+uv é uma ferramenta extremamente rápida para gerenciar:
+
+📦 Dependências (como pip)
+🐍 Versões de Python (como pyenv)
+🏗 Ambientes virtuais (como venv)
+📜 Projetos (como poetry)
+
+Instalar dependências com uv pode ser 10x a 100x mais rápido que pip dependendo do projeto.
+
 ## Pra baixar no windows é:
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 
